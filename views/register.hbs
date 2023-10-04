@@ -1,0 +1,211 @@
+<style>
+  .box-root { 
+    box-sizing: border-box; 
+    margin-top: 50px; 
+    margin-bottom: 50px; 
+  }
+  .formbg { 
+    margin: 0px auto; 
+    width: 100%; 
+    max-width: 500px; 
+    background: white;
+    border-radius: 4px; 
+    box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px; 
+  }
+  span { 
+    display: block; 
+    font-size: 20px;
+    line-height: 28px; 
+    {{!-- color: #1a1f36;  --}}
+  }
+  label { 
+    margin-bottom: 5px; 
+  }
+  .flex-justifyContent--center { 
+    -ms-flex-pack: center; 
+    justify-content: center;
+  } 
+  .padding-horizontal--48 { 
+    padding: 20px; 
+  } 
+  .padding-bottom--15 {
+    padding-bottom: 15px; 
+  } 
+  .padding-top--48 { 
+    padding-top: 48px; 
+  } 
+  .flex-flex {
+    display: flex; 
+  } .flex-direction--column { 
+    -ms-flex-direction: column;
+    flex-direction: column; 
+  } 
+  .flex-justifyContent--center { 
+    -ms-flex-pack: center; 
+    justify-content: center; 
+  } 
+  .box-root h1 { 
+    color: #4154f1; 
+  } 
+  form .btn.w-100 { 
+    background-color: #4154f1; 
+    color: #f0f0f0; 
+  }
+</style>
+<div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+  <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+    <h1>REGISTER <i class="fa fa-registered" aria-hidden="true"></i> </h1>
+  </div>
+  <div class="formbg-outer">
+    <div class="formbg">
+      <div class="formbg-inner padding-horizontal--48">
+        <span class="padding-bottom--15">Register for the course</span>
+        <span id="title1" class="padding-bottom--15"></span>
+
+        <div id="login-root">
+          <form id="btn1" action="/signup" method="post" enctype="multipart/form-data" class="row gy-3">
+            {{> flash}}
+            <div class="form-group col-md-6">
+              <label for="first_name">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                value="{{formData.first_name}}"
+                name="first_name" required
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="last_name">Last Name</label>
+              <input
+                type="text"
+                class="form-control"
+                value="{{formData.last_name}}"
+                name="last_name" required
+              />
+            </div>
+
+            <div class="form-group col-md-12">
+              <label for="email">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                value="{{formData.email}}"
+                name="email" required
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="dob">Date of Birth</label>
+              <input
+                type="date"
+                class="form-control"
+                value="{{formData.dob}}"
+                name="dob" required
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="contact">Phone Number</label>
+              <input
+                type="tel"
+                class="form-control"
+                value="{{formData.contact}}"
+                name="contact" required
+              />
+            </div>
+            <div class="form-group col-md-12">
+              <label for="address">Address</label>
+              <input
+                type="text"
+                class="form-control"
+                value="{{formData.address}}"
+                name="address" required
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="first_name">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                value="{{formData.password}}" required
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="first_name">Confirm Password</label>
+              <input
+                type="password"
+                class="form-control"
+                name="confirm_password"
+                value="{{formData.confirm_password}}" required
+              />
+            </div>
+            <div class="form-group col-md-12">
+              <label for="address">Image</label>
+              <input
+                type="file"
+                class="form-control"
+                value="{{formData.profile_image}}"
+                name="avatar" required
+              />
+            </div>
+            <div class="form-group col-md-12">
+              <label for="address">Academic Qualifications</label>
+              <select class="form-control" name="academic_qualification" required>
+                <option value="none"></option>
+                <option value="First_School_Leaving_Certificate">First School Leaving Certificate</option>
+                <option value="Senior_Secondary_School_Certificate">Senior Secondary School Certificate</option>
+                <option value="National_Diploma">National Diploma (ND)</option>
+                <option value="Higher_National_Diploma">Higher National Diploma (HND)</option>
+                <option value="Bachelor's_Degree">Bachelor's Degree</option>
+                <option value="Master's_Degree">Master's Degree</option>
+                <option value="PhD">PhD</option>
+              </select>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="course_studied">What did you study</label>
+              <input
+                type="text"
+                class="form-control"
+                value="{{formData.course_studied}}"
+                name="course_studied" required
+              />
+            </div>
+            <div class="form-group col-md-12">
+              <label for="school_studied">Institute/School of Study</label>
+              <input
+                type="text"
+                class="form-control"
+                value="{{formData.school_studied}}"
+                name="school_studied" required
+              />
+            </div>
+            <div class="form-group col-md-12">
+              <label for="reason_for_apply">Why do you want to study Data Analysis/ Product Management?</label>
+              <textarea
+                type="text"
+                class="form-control"
+                value="{{formData.reason_for_apply}}"
+                name="reason_for_apply" required
+              ></textarea>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="career_progression">What are your career progression?</label>
+              <textarea
+                type="text"
+                class="form-control"
+                value="{{formData.career_progression}}"
+                name="career_progression" required
+              ></textarea>
+            </div>
+
+
+            <div class="form-group col-md-12 mt-3">
+              <button type="submit" class="btn w-100">Submit</button>
+            </div>
+          </form>
+          <div class="mt-3"><p>Already have an account? <a href="/login">Login Here</a></p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

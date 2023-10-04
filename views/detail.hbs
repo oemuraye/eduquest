@@ -1,0 +1,328 @@
+  <style>
+      button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+button.button1{
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #000000;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#000000;
+    text-align:center;
+    transition: all 0.2s;
+}
+button.button1:hover{
+    color:#ffffff;
+    background-color:#484848;
+}
+@media all and (max-width:30em){
+    button.button1{
+        display:block;
+        margin:0.4em auto;
+   }
+
+
+
+}
+
+
+
+.cus_flex{
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+}
+  </style>
+
+<style>
+
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 200px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+    
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    
+    #i {
+        color: #1742ff;
+        font-size: 100px;
+        line-height: 200px;
+        margin-left:-15px;
+      }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    </style>
+
+  <!-- =======================================================
+  * Template Name: Edo B.S - v1.7.0
+  * Template URL: https://bootstrapmade.com/Edo B.S-bootstrap-startup-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+
+
+<body>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+        
+        
+            
+            <center>
+              <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
+                <i id="i" class="checkmark">✓</i>
+              </div>
+                <div id="loading_show"><h5 class="h5-top">Getting link...</h5><div id="loader"></div></div>
+           
+                <div id="video"></div>
+                 <a id="video2"></a>
+                 
+      
+                <h1>Success</h1> 
+                <p>We received your purchase request;<br/> we'll be in touch shortly!</p>
+              </center>
+            
+             
+      
+        </div>
+      
+      </div>
+
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs pt-10 pb-5">
+      <div class="container">
+        <h2>Couse</h2>
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li>Couse</li>
+        </ol>
+        
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Single Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-8 entries">
+
+            <article class="entry entry-single">
+
+              <div class="entry-img">
+                <img alt="" class="img-fluid" id="video1">
+              </div>
+
+              
+
+              <div class="cus_flex">
+                  <div>
+                    <h2 class="entry-title" id="title1">
+                
+                    </h2>
+                    <!-- <h4 class="entry-title" id="amount1"> -->
+                   
+                    </h4>
+                  </div>
+               
+                  <button id="button" class="button1">Apply</button>
+              </div>
+            
+            
+              
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bi bi-tags"></i> <a href="blog-single">Course Description</a></li>
+                </ul>
+              </div>
+
+              <div class="entry-content">
+                <p id="description">
+            
+                </p>
+
+               
+
+              </div>
+
+              <div class="entry-footer">
+                <i class="bi bi-folder"></i>
+                <ul class="cats">
+                  <li><a href="#">Business</a></li>
+                </ul>
+
+                <i class="bi bi-tags"></i>
+                <ul class="tags">
+                  <li><a href="#">Mentorship</a></li>
+                  <li><a href="#">Business</a></li>
+                  <li><a href="#">Marketing</a></li>
+                </ul>
+              </div>
+
+            </article><!-- End blog entry -->
+
+         
+           
+
+          </div><!-- End blog entries list -->
+
+          <div class="col-lg-4">
+
+            <div class="sidebar">
+
+          
+             
+          
+              <h3 class="sidebar-title">Tags</h3>
+              <div class="sidebar-item tags">
+                <ul>
+                  <li><a href="#">App</a></li>
+                  <li><a href="#">IT</a></li>
+                  <li><a href="#">Business</a></li>
+                  <li><a href="#">Mac</a></li>
+                  <li><a href="#">Design</a></li>
+                  <li><a href="#">Office</a></li>
+                  <li><a href="#">Creative</a></li>
+                  <li><a href="#">Studio</a></li>
+                  <li><a href="#">Smart</a></li>
+                  <li><a href="#">Tips</a></li>
+                  <li><a href="#">Marketing</a></li>
+                </ul>
+              </div><!-- End sidebar tags-->
+
+            </div><!-- End sidebar -->
+
+          </div><!-- End blog sidebar -->
+
+        </div>
+
+      </div>
+    </section><!-- End Blog Single Section -->
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+   
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    var video = document.getElementById('video')
+    var loader = document.getElementById('loading_show')
+    video.style.display = "none";
+    var video2 = document.getElementById('video2')
+    video2.style.display = "none";
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+      video.style.display = "none";
+      video2.style.display = "none";
+      loader.style.display = "block";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        // modal.style.display = "none";
+      }
+    }
+    </script>
+  <!-- Vendor JS Files -->
+  <script src="https://js.paystack.co/v2/inline.js"></script>
+  <script src="public/assets/js/custom.js"></script>
+
+  <script>
+      let objpara = {};
+     window.onload = function () {
+    var url = document.location.href,
+        params = url.split('?')[1].split('&'),
+        data = {}, tmp;
+    for (var i = 0, l = params.length; i < l; i++) {
+         tmp = params[i].split('=');
+         data[tmp[0]] = tmp[1];
+    }
+
+let para = decodeURI(data.info)
+let objpara = JSON.parse(para)
+    document.getElementById('video1').src = objpara.video;
+    document.getElementById('title1').innerText = objpara.title;
+    // document.getElementById('amount1').innerText = `N${objpara.price}`;
+    document.getElementById('description').innerText = `N${objpara.description}`;
+    objpara2 = objpara;
+  
+}
+
+
+function testJS(object){
+    let params = JSON.stringify(object);
+        url = `form?info=${params}`;
+        document.location.href = url;
+}
+
+
+let a = document.getElementById('button')
+            a.onclick = function(){
+                // payWithPaystack({amount: objpara2.price, postid: objpara2._id})
+                testJS(objpara2.title);
+            };
+  </script>
+

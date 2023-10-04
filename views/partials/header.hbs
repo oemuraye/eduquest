@@ -1,0 +1,133 @@
+  <style>
+    /* Dropdown Button */
+.dropbtn {
+  color: #24133D !important;
+  font-size: 20px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+.user-pic {
+  border-radius: 50%;
+  border: 5px solid #c0c0c0;
+}
+
+</style>
+
+
+  <header id="header" class="header fixed-top">
+    <section class="top-info py-2 show_on_desktop">
+      <div class="container container-xl d-flex justify-content-between flex-wrap gap-3">
+        <div class="d-flex gap-3">
+          <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="mailto:info@edobusinessschool.com" class="mail d-flex gap-1 align-items-center">
+            <i class="bi bi-envelope"></i>
+            <span>info@edobusinessschool.com</span>
+          </a>
+          <a href="tel:+2349034236454" class="tel d-flex gap-1 align-items-center">
+            <i class="bi bi-phone"></i>
+            <span>+234 (0) 903 4236 454</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+    <div class="container container-xl d-flex align-items-center justify-content-between py-2">
+
+      <a href="/" class="logo d-flex align-items-center">
+        <img src="public/assets/img/EBSlogo.png" alt="" height="50px" width="100px">
+        
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/"> Home</a></li>
+          {{!-- <li class="dropdown"><a href="#"><span> About </span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="team"> EBS Faculity </a></li>
+              
+             
+            </ul>
+          </li> --}}
+          
+          <li><a class="nav-link" href="about"> About </a></li>
+          <li><a class="nav-link" href="programme"> Programme </a></li>
+           
+          <li><a class="nav-link" href="contact"> Contact </a></li>
+
+          {{#if token}}
+          {{#student_data}}
+            <li>
+              <div class="dropdown">
+                <a class="dropbtn"><img class="user-pic" src="/public/uploads/{{profile_pic}}" height="50px" width="50px" alt="{{student_data.profile_pic}}"> <i class="fa fa-arrow-down " aria-hidden="true"></i> </a>
+                <div class="dropdown-content">
+                  <a href="dashboard">Dashboard</a>
+                  <a href="logout">Logout</a>
+                </div>
+              </div>
+            </li>
+           {{/student_data}}
+          {{else}}
+          <li><a class="nav-link" href="login"> Login </a></li>
+          {{/if}}
+
+          <section class="top-info mobile-top-info py-2 show_on_mobile px-2">
+            <div class="container container-xl d-flex justify-content-between flex-wrap">
+              <div class="d-flex gap-2 ">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              </div>
+              <div class="d-flex flex-wrap">
+                <a href="mailto:info@edobusinessschool.com" class="mail d-flex gap-1 align-items-center">
+                  <i class="bi bi-envelope"></i>
+                  <span>info@edobusinessschool.com</span>
+                </a>
+                <a href="tel:+2349034236454" class="tel d-flex gap-1 align-items-center">
+                  <i class="bi bi-phone"></i>
+                  <span>+234 (0) 903 4236 454</span>
+                </a>
+              </div>
+
+            </div>
+          </section>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header> 

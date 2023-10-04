@@ -1,0 +1,261 @@
+    <link href="public/assets/css/custom.css" rel="stylesheet">
+
+
+    <style>
+      #loader {
+        border: 5px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 5px solid #3498db;
+        width: 20;
+        margin: 10px;
+        height: 20;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+      }
+      
+      /* Safari */
+      @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      </style>
+
+    <style>
+
+      /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 200px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+      
+      /* Modal Content */
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+      
+      /* The Close Button */
+      .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      
+     
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      </style>
+
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+  
+  
+      
+      <center>
+        <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
+          <i class="checkmark">✓</i>
+        </div>
+          <div id="loading_show"><h5 class="h5-top">Getting link</h5><div id="loader"></div></div>
+     
+          <div id="video"></div>
+           <a id="video2"></a>
+           
+
+          <h1>Success</h1> 
+          <p>We received your purchase request;<br/> we'll be in touch shortly!</p>
+        </center>
+      
+       
+
+  </div>
+
+</div>
+
+  <div class="lds-ripple" id="lds-ripple"><div></div><div></div></div>
+
+  <section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up"> Edo Business School Programmes  </h1>
+          <h2 data-aos="fade-up" data-aos-delay="400"> is a Pan-African organization that seeks to discover, develop and deploy the next generation of African business Leaders </h2>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start">
+              <!-- <a href="programme.html" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <span> Programmes </span>
+                <i class="bi bi-arrow-right"></i>
+              </a> -->
+              <!-- <a href="index.html#admit" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <span> Admission & Fees </span>
+                <i class="bi bi-arrow-right"></i>
+              </a> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+          <img src="public/assets/img/blog/blog-recent-5.jpg" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- End Hero -->
+  
+  <div class="col-lg-12 d-flex flex-row justify-content-center">
+    <h1 data-aos="fade-up" class="space"> Edo Business Course  </h1>
+    {{!-- <button id="myBtn">Open Modal</button>  --}}
+   </div>
+  
+
+
+
+<center class="list">
+    <div id="grid">
+        <!-- <div id="data">
+
+          </div> -->
+       
+        
+    </div>
+    
+</center>
+   
+    
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+   
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    var video = document.getElementById('video')
+    var loader = document.getElementById('loading_show')
+    video.style.display = "none";
+    var video2 = document.getElementById('video2')
+    video2.style.display = "none";
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+      video.style.display = "none";
+      video2.style.display = "none";
+      loader.style.display = "block";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        // modal.style.display = "none";
+      }
+    }
+    </script>
+
+<script src="https://js.paystack.co/v2/inline.js"></script>
+<script src="./public/assets/js/custom.js"></script>
+<script>
+function testJS(object){
+    let params = JSON.stringify(object);
+        url = `detail.html?info=${params}`;
+        document.location.href = url;
+}
+
+
+    const proxyurl = "https://brykiva.herokuapp.com/api/post";
+fetch(proxyurl)
+  .then(response => response)
+  .then(data => {
+    const resData = data.json().then(value =>{
+        // let objTo = document.getElementById('grid');
+    let ripple =  document.getElementById("lds-ripple")
+    ripple.style.display = "none";
+        value.map((e)=>{
+            let grid = document.getElementById("grid");
+            let objTo = document.createElement('div');
+            let divtest = document.createElement("div");
+            let container = document.createElement('div')
+            let img = document.createElement("img");
+            let p = document.createElement("p");
+            let a = document.createElement('button')
+            let h4 = document.createElement("h4");
+            a.onclick = function(){
+                 testJS(e);
+                // payWithPaystack({amount: e.price, postid: e._id})
+            };
+            // a.addEventListener("click", payWithPaystack());
+          
+            img.src = e.video
+             img.style = "width:100%";
+
+            divtest.classList.add("card");
+          
+            objTo.classList.add('item');
+            
+            container.classList.add('container');
+            
+            a.classList.add("button1");
+           
+            h4.innerHTML = e.title
+            a.innerText = "View Course"
+            // divtest.innerHTML = e.title
+            p.innerHTML = e.description.toString().substring(0, 100)+"...";
+
+            grid.appendChild(objTo);
+            divtest.appendChild(img);
+            objTo.appendChild(divtest);
+           
+            container.appendChild(h4)
+            container.appendChild(p)
+            container.appendChild(a)
+
+            divtest.appendChild(container);
+           
+           
+           
+            
+            
+            // const node = document.createElement('div');
+          
+            // // const textnode = document.createTextNode(e.userId);
+            // // node.appendChild(textnode);
+            // document.getElementById('data').appendChild(node);
+        })
+    });
+  })
+  .catch((err) => console.log("Can’t access " + url + " response. Blocked by browser?" + err));
+</script>
+

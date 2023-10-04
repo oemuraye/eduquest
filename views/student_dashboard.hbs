@@ -1,0 +1,124 @@
+<style>
+.student-profile {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.student-profile .card {
+  border-radius: 10px;
+}
+
+.student-profile .card .card-header .profile_img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 10px auto;
+  border: 10px solid #ccc;
+  border-radius: 50%;
+}
+
+.student-profile .card h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.student-profile .card p {
+  font-size: 16px;
+  color: #000;
+}
+
+.student-profile .table th,
+.student-profile .table td {
+  font-size: 14px;
+  padding: 5px 10px;
+  color: #000;
+}
+.dashboard-login {
+  margin-top: 150px !important;
+}
+</style>
+{{#if token}}
+<!-- Student Profile -->
+<div class="student-profile py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent text-center">
+            <img class="profile_img" src="/public/uploads/{{student_data.profile_pic}}" alt="">
+            <h3 class="student-name">{{student_data.name}}</h3>
+          </div>
+          <div class="card-body">
+            <p class="mb-0"><strong class="pr-1">Email: </strong><span class="student-email">{{student_data.email}}</span></p>
+            <p class="mb-0"><strong class="pr-1">Class: </strong>4</p>
+            <p class="mb-0"><strong class="pr-1">Section: </strong>A</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 my-4">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent border-0 my-2">
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
+          </div>
+          <div class="card-body pt-0">
+            <table class="table table-bordered">
+              <tr>
+                <th width="30%">Date of Birth</th>
+                <td width="2%">:</td>
+                <td>{{student_data.date_of_birth}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Academic Year	</th>
+                <td width="2%">:</td>
+                <td>2020</td>
+              </tr>
+              {{!-- <tr>
+                <th width="30%">Gender</th>
+                <td width="2%">:</td>
+                <td>Male</td>
+              </tr> --}}
+              <tr>
+                <th width="30%">Course</th>
+                <td width="2%">:</td>
+                <td>Web Development</td>
+              </tr>
+              <tr>
+                <th width="30%">Fee (&#8358;)</th>
+                <td width="2%">:</td>
+                <td class="course-fee">10000</td>
+              </tr>
+              {{#if student_data.hasPaid}}
+                <tr>
+                  <th width="30%">Payment</th>
+                  <td width="2%">:</td>
+                  <td class="text-success">Paid <i class="fa fa-check-circle" aria-hidden="true"></i> </td>
+                </tr>
+              {{else}}
+                <tr>
+                  <th width="30%">Payment</th>
+                  <td width="2%">:</td>
+                  <td class="payment-check"><span id="pay-btn" class="btn btn-sm btn-success">Make Payment</span></td>
+                </tr>
+              {{/if}}
+              {{#if query}}
+                <tr>
+                  <th width="30%">Transaction ID (ref)</th>
+                  <td width="2%">:</td>
+                  <td class="payment-ref">{{query}}</td>
+                </tr> 
+              {{else}}
+              {{/if}} 
+                <tr>
+                  <th width="30%">Your Goal</th>
+                  <td width="2%">:</td>
+                  <td>{{student_data.career_progression}}</td>
+                </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{else}}
+  <div class="dashboard-login text-center my-5">You are not logged in.<a href="/login" class=""> Click to login</a><div id="loader"></div></div>
+{{/if}}
